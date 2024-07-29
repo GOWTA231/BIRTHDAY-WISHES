@@ -1,0 +1,189 @@
+<DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spooky Birthday Wishes By GJ</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="above-button-text">
+               <h1><p style="color: green;">HAPPY BIRTHDAY MAME🥳👻. HERE IS YOUR SURPRISE!!!</p></h1>
+            </div>
+            <button onclick="showMessage()">surprise buddy 🎁🎁</button>
+            <div id="birthday-message" class="hidden">
+                <h1>HAPPY BIRTHDAY, [NAME!</h1>
+            </div>
+            <div id="message" class="hidden">
+                <img src="spooky1.jpg" alt="Spooky Image">
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+    </html>
+    
+    <style>
+    
+    @keyframes glow {
+        0% { background-color: red; }
+        50% { background-color: blue; }
+        100% { background-color: green; }
+        200%  { background-color: lightblue;}
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image: url('spooky_background.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+    
+    .container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    button {
+        padding: 15px 30px;
+        font-size: 18px;
+        background-color: #ff5722;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        outline: none;
+        animation: glow 1.5s infinite alternate;
+    }
+    
+    button:hover {
+        background-color: #e64a19;
+    }
+    
+    #message img {
+        max-width: 100%;
+        max-height: 80vh;
+    }
+    
+    #birthday-message {
+        background-color: black;
+        text-align: center;
+        color: green; /* Change the color here */
+    
+        @media only screen and (max-width: 768px) {
+        body {
+            background-image: none; /* Remove background image for mobile */
+            background-color: #000; /* Set background color to black for mobile */
+        }
+    }
+    </style>
+    <script>
+    // Define an array of birthday messages
+    var birthdayMessages = [
+    "On your birthday, may the shadows whisper their chilling wishes, and the ghosts dance in delight as they haunt your dreams. Happy birthday, my friend, may fear be your companion tonight 👻👻👻🥳🥳.",
+    
+    "As darkness falls on this day, may eerie creatures gather to serenade you with their monstrous melodies. Wishing you a spine-chilling birthday filled with frightful surprises and unforgettable scares 👻👻👻🥳🥳.",
+    
+    "Happy birthday to the bravest soul I know, who faces their fears head-on and thrives in the darkness. May your birthday be as chilling and twisted as the most horrifying nightmares 👻👻👻🥳🥳.",
+    
+    "On this special day, may the witching hour bring you thrills and chills, and may the ghosts of the past whisper terrifying tales of your future. Happy birthday, my fearless friend! 👻👻👻🥳🥳",
+    
+    "On your birthday, may the moonlight guide you through haunted forests, as the creatures of the night sing a haunting melody just for you. Have a truly hair-raising birthday, my friend 👻👻👻🥳🥳.",
+    
+    "Wishing you a birthday filled with dark secrets, paranormal encounters, and bone-chilling adventures. May your day be as twisted and macabre as your favorite horror movie 👻👻👻🥳🥳.",
+    
+    "Happy birthday to the master of all things terrifying! May your special day be filled with jump scares, heart-pounding moments, and screams that echo in the night 👻👻👻🥳🥳.",
+    
+    "On this frightful day, may the ghosts of your past birthdays come back to haunt you, reminding you of all the spine-chilling memories you’ve made. Have a truly chilling birthday, my dear friend👻👻👻🥳🥳.",
+    
+    "As the clock strikes midnight on your birthday, may the gates of the underworld open, and may you be greeted by the ghosts of your ancestors. Wishing you a hauntingly beautiful birthday filled with supernatural encounters 👻👻👻🥳🥳.",
+    
+    "Happy birthday to the ultimate horror enthusiast! May your day be filled with ghoulish delights, bone-chilling thrills, and nightmares that leave you breathless 👻👻👻🥳🥳.",
+    
+    "On your birthday, may the shadows come alive, dancing to the rhythm of your heartbeat. Wishing you a day filled with terrifying surprises and goosebumps-inducing adventures 👻👻👻🥳🥳.",
+    
+    "Happy birthday, my friend, may your day be filled with gory delights, spine-tingling scares, and a touch of the supernatural. Here’s to another year of embracing the darkness within 👻👻👻🥳🥳.",
+    
+    "On this extraordinary day, may the veil between the living and the dead grow thin, allowing you to glimpse the horrors that lie beyond. Wishing you a birthday filled with bone-chilling encounters and hair-raising experiences 👻👻👻🥳🥳.",
+    
+    "Wishing you a birthday that’s so terrifyingly epic, it will make even the bravest souls tremble in fear. May your day be filled with blood-curdling screams and spine-chilling adventures👻👻👻🥳🥳.",
+    
+    "On this special day, may the ghosts of all the birthday candles you’ve blown out before come back to haunt you, bringing you supernatural luck and bone-chilling thrills. Happy birthday, my fearless companion! 👻👻👻🥳🥳",
+    
+    "May your birthday be filled with shadows that whisper secrets, and may the moonlight guide you through the darkness. Here’s to a day of fear and fright, my friend. Happy birthday! 👻👻👻🥳🥳",
+    
+    "On this chilling day, may the spirits of the undead rise from their graves to celebrate your birth. Wishing you a hauntingly delightful birthday, filled with ghostly surprises and paranormal encounters.👻👻👻🥳🥳",
+    
+    "Happy birthday to the ultimate horror aficionado! May your special day be filled with spine-chilling tales, bone-crushing scares, and a flicker of candlelight that reveals the unknown. 👻👻👻🥳🥳"
+    ];
+    
+    var imageUrls = [
+        "img1.jpg",
+        "img3.jpg",
+        "img5.jpg",
+        "img1.jpg",
+        "img8.jpg",
+        "img9.jpg",
+        "img1.jpg",
+        "img6.jpg",
+        "img7.jpg",
+        "img5.jpg",
+        "img9.jpg",
+        "img2.jpg",
+        "img3.jpg",
+        "img1.jpg",
+        "img6.jpg",
+        "img7.jpg",
+        "img9.jpg",
+        "img9.jpg",
+    ];
+    
+    function showMessage() {
+        var messageDiv = document.getElementById('message');
+        var button = document.querySelector('button');
+        var birthdayMessage = document.getElementById('birthday-message');
+        var aboveButtonText = document.getElementById('above-button-text');
+    
+        // Remove the background image
+        document.body.style.backgroundImage = 'none';
+        // Set the background color to black
+        document.body.style.backgroundColor = '#000';
+    
+        // Select a random birthday message from the array
+        var randomIndex = Math.floor(Math.random() * birthdayMessages.length);
+        var selectedMessage = birthdayMessages[randomIndex];
+    
+        // Update the birthday message
+        birthdayMessage.innerHTML = "<h1>" + selectedMessage + "</h1>";
+    
+        messageDiv.classList.remove('hidden');
+        aboveButtonText.style.display = 'none';
+    
+        
+        // Hide the button
+        button.style.display = 'none';
+    
+        // Display the birthday message
+        birthdayMessage.classList.remove('hidden');
+    
+        var messageImage = document.querySelector('#message img');
+    
+        // Generate a random index to select a random image URL from the array
+        var randomIndex = Math.floor(Math.random() * imageUrls.length);
+        var imageUrl = imageUrls[randomIndex];
+    
+        // Set the image source to the selected URL
+        messageImage.src = imageUrl;
+    }
+    
+    
+    </script>
